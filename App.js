@@ -33,7 +33,6 @@ export default function App() {
       setCount(count + 1)
   }
 
-  // const renderItem = data => <Texto key={data.item.id} id={data.item.id} value={data.item.value}></Texto>
   const renderItem = data => <Text style={styles.listDias} onPress={onHandlerModal.bind(this, data.item.id)}>{data.item.id}. {data.item.value}</Text>
 
   return (
@@ -50,16 +49,8 @@ export default function App() {
           keyExtractor={ item => item.id }
         >
         </FlatList>
-        {/* {
-          listItem.map( item => <Text>{item.value}</Text>)
-      } */}
       </View>
       <MyModal onDelete={onHandlerDelete} item={itemSelected} visible={modalVisible} onClose={closeModal}/>
     </View>
   );
 }
-
-// function Texto(props) {
-//   return <Text onPress={onHandlerModal.bind(this, props.id)}> {props.id}. {props.value}</Text>
-// }
-
